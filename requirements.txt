@@ -1,0 +1,6 @@
+asgiref @ file:///home/conda/feedstock_root/build_artifacts/asgiref_1642912811357/work
+backports.zoneinfo==0.2.1
+Django @ file:///home/conda/feedstock_root/build_artifacts/django_1638897748254/work
+pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1647961439546/work
+sqlparse @ file:///home/conda/feedstock_root/build_artifacts/sqlparse_1631317292236/work
+typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1644850595256/work
