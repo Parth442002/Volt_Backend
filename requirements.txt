@@ -1,6 +1,35 @@
 asgiref @ file:///home/conda/feedstock_root/build_artifacts/asgiref_1642912811357/work
+autopep8 @ file:///home/conda/feedstock_root/build_artifacts/autopep8_1635267974115/work
 backports.zoneinfo==0.2.1
-Django @ file:///home/conda/feedstock_root/build_artifacts/django_1638897748254/work
+blinker==1.4
+brotlipy @ file:///Users/runner/miniforge3/conda-bld/brotlipy_1648854217904/work
+certifi==2021.10.8
+cffi @ file:///Users/runner/miniforge3/conda-bld/cffi_1636046166270/work
+charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1644853463426/work
+cryptography @ file:///Users/runner/miniforge3/conda-bld/cryptography_1649035278201/work
+defusedxml @ file:///home/conda/feedstock_root/build_artifacts/defusedxml_1615232257335/work
+dj-database-url==0.5.0
+dj-rest-auth @ file:///home/conda/feedstock_root/build_artifacts/dj-rest-auth_1648632386156/work
+Django==3.2.4
+django-allauth==0.41.0
+django-cors-headers @ file:///home/conda/feedstock_root/build_artifacts/django-cors-headers_1641858895663/work
+djangorestframework @ file:///home/conda/feedstock_root/build_artifacts/djangorestframework_1639677796037/work
+djangorestframework-simplejwt==5.1.0
+gunicorn==20.1.0
+idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1642433548627/work
+oauthlib @ file:///home/conda/feedstock_root/build_artifacts/oauthlib_1643507977997/work
+psycopg2 @ file:///Users/runner/miniforge3/conda-bld/psycopg2-split_1640944686201/work
+pycodestyle @ file:///home/conda/feedstock_root/build_artifacts/pycodestyle_1633982426610/work
+pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1636257122734/work
+PyJWT @ file:///home/conda/feedstock_root/build_artifacts/pyjwt_1638819640841/work
+pyOpenSSL @ file:///home/conda/feedstock_root/build_artifacts/pyopenssl_1643496850550/work
+PySocks @ file:///Users/runner/miniforge3/conda-bld/pysocks_1648857342405/work
+python3-openid @ file:///home/conda/feedstock_root/build_artifacts/python3-openid_1612988842750/work
 pytz @ file:///home/conda/feedstock_root/build_artifacts/pytz_1647961439546/work
+requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1641580202195/work
+requests-oauthlib @ file:///home/conda/feedstock_root/build_artifacts/requests-oauthlib_1643557462909/work
 sqlparse @ file:///home/conda/feedstock_root/build_artifacts/sqlparse_1631317292236/work
+toml @ file:///home/conda/feedstock_root/build_artifacts/toml_1604308577558/work
 typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1644850595256/work
+urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1647489083693/work
+whitenoise==6.0.0
