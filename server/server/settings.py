@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import django_heroku
 from pathlib import Path
 from datetime import timedelta
 
@@ -21,12 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8xf^_!01%r!z1zg@)k3bmr!0_s)pel8*q177s7r7=r&0k7h-l2'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -40,10 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    #LOCAL APPS
+    # LOCAL APPS
     'authentication',
 
-    #Third Party Apps
+    # Third Party Apps
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
@@ -67,7 +66,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    #cors headers middleware
+    # cors headers middleware
     'corsheaders.middleware.CorsMiddleware',
 ]
 
@@ -224,3 +223,6 @@ REST_AUTH_REGISTER_SERIALIZERS = {
 # EMAIL VERIFICATION
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+
+django_heroku.settings(locals())
