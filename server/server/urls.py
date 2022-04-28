@@ -15,8 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import static
+from django.conf import settings  # to import static in deployment
+from django.views.static import serve
+
+static_urlpatterns = [
+    path("media/", serve, {"document_root": settings.MEDIA_ROOT}),
+    path("static/", serve,
+         {"document_root": settings.STATIC_ROOT}),
+]
 
 urlpatterns = [
+    path("", include(static_urlpatterns)),
     path('admin/', admin.site.urls),
 
     # Authentication Urls
