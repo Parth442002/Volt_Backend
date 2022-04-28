@@ -27,6 +27,7 @@ VEHICLE_COMPANIES = (
 
 
 class Vehicle(models.Model):
+    owner = models.ForeignKey(user_model, on_delete=models.CASCADE)
     vehicle_type = models.CharField(max_length=200, choices=VEHICLE_TYPE)
 
     vehicle_company = models.CharField(
@@ -37,17 +38,7 @@ class Vehicle(models.Model):
     vehicle_connector = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
-        return self.vehicle_name
-
-
-class Garage(models.Model):
-    owner = models.OneToOneField(user_model, on_delete=models.CASCADE)
-    vehicles = models.ManyToManyField(Vehicle)
-
-    def __str__(self):
         if self.owner.username:
-            return self.owner.username+"'s Garage"
+            return self.owner.username + ' '+self.vehicle_name
         elif self.owner.email:
-            return self.owner.email+"'s Garage"
-        elif self.owner.phone:
-            return self.owner.phone+"'s Garage"
+            return self.owner.email + ' '+self.vehicle_name
