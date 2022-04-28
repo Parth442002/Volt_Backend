@@ -20,6 +20,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Authentication Urls
-    path('auth/', include('dj_rest_auth.urls')),
-    path('auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('api/v1/auth/', include('dj_rest_auth.urls')),
+    path('api/v1auth/registration/', include('dj_rest_auth.registration.urls')),
+
+
+    # garage urls
+    path('api/v1/', include('garage.urls')),
 ]
