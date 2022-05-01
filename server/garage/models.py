@@ -1,7 +1,6 @@
-from pyexpat import model
-from secrets import choice
-from django.db import models
 from django.contrib.auth import get_user_model
+from django.db import models
+
 # Create your models here.
 
 user_model = get_user_model()
@@ -25,6 +24,13 @@ VEHICLE_COMPANIES = (
     ('Byd', 'Byd')
 )
 
+CONNECTOR_TYPE = (
+    ('Type 1', 'Type 1')
+    ('Type 2', 'Type 2')
+    ('Type 3', 'Type 3')
+    ('Type 4', 'Type 4')
+)
+
 
 class Vehicle(models.Model):
     owner = models.ForeignKey(user_model, on_delete=models.CASCADE)
@@ -35,7 +41,8 @@ class Vehicle(models.Model):
 
     vehicle_name = models.CharField(max_length=200, null=False, blank=False)
 
-    vehicle_connector = models.CharField(max_length=200, blank=True, null=True)
+    vehicle_connector = models.CharField(
+        choices=CONNECTOR_TYPE, max_length=200, blank=True, null=True)
 
     def __str__(self):
         if self.owner.username:
