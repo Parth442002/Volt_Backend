@@ -10,3 +10,42 @@ repos:
       - id: check-merge-conflict
       - id: name-tests-test
         args: ["--django"]
+
+  - repo: https://github.com/PyCQA/flake8
+    rev: "4.0.1"
+    hooks:
+      - id: flake8
+        additional_dependencies: [
+                "flake8-bugbear",
+                "flake8-comprehensions",
+                "flake8-mutable",
+                "flake8-print",
+                "flake8-simplify",
+        ]
+        exclude: docs\/.*
+  - repo: https://github.com/pycqa/pylint
+    rev: "pylint-2.7.2"
+    hooks:
+      - id: pylint
+        exclude: "[a-zA-Z]*/(migrations)/(.)*"
+        args: [
+            "--load-plugins=pylint_django",
+            "--django-settings-module=precommit_django_sample.settings"
+        ]
+        additional_dependencies: [
+          django,
+          pylint-django
+        ]
+  - repo: https://github.com/pycqa/isort
+    rev: 5.7.0
+    hooks:
+        - id: isort
+  - repo: https://github.com/psf/black
+    rev: "21.12b0"
+    hooks:
+      - id: black
+  - repo: https://github.com/pycqa/bandit
+    rev: 1.6.2
+    hooks:
+      - id: bandit
+        args: ['-iii', '-ll']
