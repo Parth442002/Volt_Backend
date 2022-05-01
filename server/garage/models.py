@@ -25,10 +25,10 @@ VEHICLE_COMPANIES = (
 )
 
 CONNECTOR_TYPE = (
-    ('Type 1', 'Type 1')
-    ('Type 2', 'Type 2')
-    ('Type 3', 'Type 3')
-    ('Type 4', 'Type 4')
+    ('Type 1', 'Type 1'),
+    ('Type 2', 'Type 2'),
+    ('Type 3', 'Type 3'),
+    ('Type 4', 'Type 4'),
 )
 
 
