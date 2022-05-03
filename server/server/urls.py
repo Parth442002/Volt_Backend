@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import static
+
 from django.conf import settings  # to import static in deployment
 from django.views.static import serve
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='Volt API')
 
 static_urlpatterns = [
     path("media/", serve, {"document_root": settings.MEDIA_ROOT}),
@@ -29,11 +32,16 @@ urlpatterns = [
     path("", include(static_urlpatterns)),
     path('admin/', admin.site.urls),
 
+    # API Documentation
+
     # Authentication Urls
     path('api/v1/auth/', include('dj_rest_auth.urls')),
     path('api/v1/auth/registration/', include('dj_rest_auth.registration.urls')),
 
 
     # garage urls
-    path('api/v1/', include('garage.urls')),
+    path('api/v1/garage', include('garage.urls')),
+
+
+    path("", schema_view),
 ]
